@@ -1,18 +1,24 @@
-#include <stdio.h>
+#include <stdio.h> 
 
 int main() {
-
-    int num1, num2; 
-
-    printf("Digite o primeiro numero: "); 
-    scanf("%d", &num1); 
-    printf("Digite o segundo numero: "); 
-    scanf("%d", &num2); 
     
-    printf("Soma: %d + %d = %d\n", num1, num2, num1 + num2); 
-    printf("Subtracao: %d - %d = %d\n", num1, num2, num1 - num2); 
-    printf("Multiplicacao: %d x %d = %d\n ", num1, num2, num1 * num2 ); 
-    printf("Divisao: %d / %d = %.2f\n ", num1, num2, (double) num1 / num2 ); 
+    int vect[20] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}; 
+    int i; 
+
+
+    printf("Out \n");
+    for (i = 0; i < 20; i++){
+
+        if(vect[i] % 3 == 0) {
+            continue;
+        }
+        
+        if (vect[i] == 15) {
+            break;
+        } 
+        printf("%d ", vect[i]);
+    }
+
 
     return 0;
 }
