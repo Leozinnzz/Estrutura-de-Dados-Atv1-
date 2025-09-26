@@ -12,10 +12,13 @@ int main() {
     scanf("%d", &x); 
 
     printf("Digite o percentual de impostos Y: ");
-    scanf("%d", y); 
+    scanf("%d", &y); 
     
-    printf("percentual x: %d\n", x * (x / 100)); 
-    printf("percentual y: %d\n", y * (y / 100)); 
+    custF = custP + (custP * x/100.0); 
+    custF += (custP * (custF * y/100.0));
+    
+    printf("O custo final sera de: %.2f \n", custF); 
+    
 
     return 0;
 }
