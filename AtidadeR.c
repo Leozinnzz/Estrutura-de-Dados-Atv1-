@@ -1,35 +1,20 @@
-#include <stdio.h> 
-#include <limits.h>
+#include <stdio.h>
 
-int main() {
+int main() { 
     
-    int n, m;
-    int maior, menor;
-    int soma = 0;
+    int i, m, j; 
+    char n;
 
-    printf("Quantos numeros voce vai digitar: ");
-    scanf("%d", &n);
-    for (int i = 0; i < n; i++){
-        printf("Digite os numeros: ");
-        scanf("%d", &m); 
-        if (m > 0 ){
-            maior = INT_MIN; 
-            menor = INT_MAX;
-            
-            if (m > maior) 
-                maior = m;
-            
-            if (m < menor) 
-                menor = m;
-            
-            soma += m;
+    printf("Digite qualquer digito: ");
+    scanf("%c", &n);
+    for (j = 6; j >= 1; j--) {
+        m = j;
+        for (i = m; i >= 1; i--) {
+            printf("%c ", n);
         }
+        printf("\n");
     }
 
-    printf("Soma dos numeros digitados:  %d\n", soma);
-    printf("Maior valor: %d\n", maior);
-    printf("Menor valor: %d\n", menor);
-    printf("Media: %.2f\n", (float) soma / n); 
 
-    return 0;
+
 }
