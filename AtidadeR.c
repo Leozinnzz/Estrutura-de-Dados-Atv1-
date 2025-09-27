@@ -1,26 +1,35 @@
-#include <stdio.h>
+#include <stdio.h> 
+#include <limits.h>
 
 int main() {
+    
+    int n, m;
+    int maior, menor;
+    int soma = 0;
 
-    int a;
-    int b, aux;
-
-//falta terminar a logica
-    do {
-        printf("Digite dois valores: \n"); 
-        scanf("%d", &a); 
-        scanf("%d", &b);
-        
-    }  while((a % 2 == b % 2)); 
-
-    if (a > b) {
-        aux = a; 
-        a = b;
-        b = aux;
+    printf("Quantos numeros voce vai digitar: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++){
+        printf("Digite os numeros: ");
+        scanf("%d", &m); 
+        if (m > 0 ){
+            maior = INT_MIN; 
+            menor = INT_MAX;
+            
+            if (m > maior) 
+                maior = m;
+            
+            if (m < menor) 
+                menor = m;
+            
+            soma += m;
+        }
     }
 
-    printf("Numeros do intervalo de %d a %d \n", a, b);
-    for (int i = a + 1; i < b; i++) {
-        printf("%d\n", i);
-    }
+    printf("Soma dos numeros digitados:  %d\n", soma);
+    printf("Maior valor: %d\n", maior);
+    printf("Menor valor: %d\n", menor);
+    printf("Media: %.2f\n", (float) soma / n); 
+
+    return 0;
 }
