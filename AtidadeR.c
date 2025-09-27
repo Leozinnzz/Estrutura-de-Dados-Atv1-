@@ -3,17 +3,24 @@
 int main() {
 
     int a;
-    int b;
+    int b, aux;
 
-printf("Digite dois valores: \n"); 
-scanf("%d", &a);
-scanf("%d", &b);
-    while (a % 2 != b % 2) {
-        scanf("%d", &a);
+//falta terminar a logica
+    do {
+        printf("Digite dois valores: \n"); 
+        scanf("%d", &a); 
         scanf("%d", &b);
-        if (a % 2 == b % 2) {
-            printf("%d\n", a);
-            printf("%d\n", b);
-        }
-    }  
+        
+    }  while((a % 2 == b % 2)); 
+
+    if (a > b) {
+        aux = a; 
+        a = b;
+        b = aux;
+    }
+
+    printf("Numeros do intervalo de %d a %d \n", a, b);
+    for (int i = a + 1; i < b; i++) {
+        printf("%d\n", i);
+    }
 }
