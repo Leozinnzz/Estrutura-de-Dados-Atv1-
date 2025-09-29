@@ -1,30 +1,33 @@
-#include <stdio.h> 
+#include <stdio.h>
 
 int main() {
+    float media, n1, n2, n3;
+    int p1, p2, p3;
 
-    int peso;
-    float altura, imc; 
+    printf("Digite 3 notas: \n");
+    scanf("%f %f %f", &n1, &n2, &n3); 
 
-    printf("Digite seu peso: ");
-    scanf("%d", &peso); 
-    printf("Digite sua altura ");
-    scanf("%f", &altura);
-
-    imc = peso / (altura * altura);
-
-    if (imc < 18.5) {
-        printf("Abaixo do peso\n");
-    } else if (imc >= 18.5 && imc < 24.9) {
-        printf("Esta com o peso normal:\n"); 
-    } else if (imc >= 24.9 && imc < 29.0) {
-        printf("Sobrepeso:\n");
-    } else if (imc >= 30 && imc < 34.9) {
-        printf("Obesidade nivel I");
-    } else if (imc >= 35 && imc < 39.9) {
-        printf("Obesidade nivel II");
-    } else {
-        printf("Obesidade nivel III");
+    if(n1 >= n2 && n1 >= n3) {
+        p1 = 4; p2 = 3; p3 = 3; 
+    } 
+    else if (n2 >= n1 && n2 >= n3) {
+        p1 = 3; p2 = 4; p3 = 3;
+    }
+    else {
+        p1 = 3; p2 = 3; p3 = 4;
     }
 
-    return 0;
+    media = (n1 * p1 + n2 * p2 + n3 * p3) / (p1 + p2 + p3);
+
+    if (media >= 6) {
+        printf("Aprovado!\n");
+    }
+    else {
+        printf("Reprovado!\n");
+    }
+
+    printf("Media ponderada %.2f \n", media);
+
+    
+
 }
