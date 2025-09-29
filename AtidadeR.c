@@ -1,32 +1,17 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main () {
-    
-    int N, i; 
-    bool primo = true;
 
+    int n, i, m, j; 
 
-    printf("Digite um numero: ");
-    scanf("%d", &N); 
+    printf("Digite qualquer numero: "); 
+    scanf("%d", &n); 
 
-    if (N <= 1) {
-        primo = false; 
-    } else {
-        for (i = 2; i <= N / 2; i++){
-            if (N % i == 0) {
-                primo = false;
-                break;
-            }
-        } 
+    for(i = n; i >= 1; i--) {
+        m = i;
+        for (j = m; j >= 1; j--) {
+            printf(" * ");
+        }
+        printf("\n");
     }
-
-    if(primo) {
-        printf("%d e um numero primo\n", N);
-    } else {
-        printf("%d nao e um numero primo\n", N);
-    }
-
-    return 0;
 }
-
