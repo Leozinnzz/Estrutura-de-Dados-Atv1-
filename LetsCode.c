@@ -1,26 +1,51 @@
 #include <stdio.h>
 
 int main() {
-    int n1, n2, n3, n4, n5; 
-    int maior, menor;
 
-    printf("Digite 5 notas: \n"); 
-    scanf("%d %d %d %d %d", &n1, &n2, &n3, &n4, &n5);
+    int mes; 
 
-    int soma = n1 + n2 + n3 + n4 + n5;
-    maior = n1;
-    menor = n1; 
+    printf("Digita o numero do mes: ");
+    scanf("%d", &mes);
 
-    if (n2 > maior) maior = n2;
-    if (n3 > maior) maior = n3;
-    if (n4 > maior) maior = n4; 
-    if (n5 > maior) maior = n5; 
 
-    if (n2 < menor) menor = n2; 
-    if (n3 < menor) menor = n3;
-    if (n4 < menor) menor = n4; 
-    if (n5 < menor) menor = n5;
-
-    printf("Media das notas %.2f\n", (float) (soma - maior - menor) / 3);
-} 
-
+    switch (mes) {
+        case 1:
+            printf("Janeiro"); 
+            break;
+        case 2: 
+            printf("Fevereiro");
+            break;
+        case 3: 
+            printf("Março"); 
+            break; 
+        case 4: 
+            printf("Abril"); 
+            break;
+        case 5: 
+            printf("Maio");
+            break;
+        case 6: 
+            printf("Junho");
+            break;
+        case 7: 
+            printf("Julho"); 
+            break;
+        case 8: 
+            printf("Agosto"); 
+            break;
+        case 9: 
+            printf("Setembro");
+            break; 
+        case 10: 
+            printf("Outrubro"); 
+            break; 
+        case 11: 
+            printf("Novembro"); 
+            break; 
+        case 12: 
+            printf("Dezembro");
+            break; 
+        default: 
+            printf("Esse mes nao existe: "); 
+    }
+}
