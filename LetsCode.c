@@ -1,51 +1,33 @@
-#include <stdio.h>
+#include <stdio.h> 
+#include <math.h>
 
 int main() {
 
-    int mes; 
+    float a, b, c, x1, x2, delta; 
 
-    printf("Digita o numero do mes: ");
-    scanf("%d", &mes);
+    printf("Digite o valor de A: ");
+    scanf("%f", &a);
+    printf("Digite o valor de B: ");
+    scanf("%f", &b); 
+    printf("Digite o valor de C: ");
+    scanf("%f", &c);
 
+    if (a == 0) {
+        printf("Nao e uma equaçao de segundo grau");
+    } 
 
-    switch (mes) {
-        case 1:
-            printf("Janeiro"); 
-            break;
-        case 2: 
-            printf("Fevereiro");
-            break;
-        case 3: 
-            printf("Março"); 
-            break; 
-        case 4: 
-            printf("Abril"); 
-            break;
-        case 5: 
-            printf("Maio");
-            break;
-        case 6: 
-            printf("Junho");
-            break;
-        case 7: 
-            printf("Julho"); 
-            break;
-        case 8: 
-            printf("Agosto"); 
-            break;
-        case 9: 
-            printf("Setembro");
-            break; 
-        case 10: 
-            printf("Outrubro"); 
-            break; 
-        case 11: 
-            printf("Novembro"); 
-            break; 
-        case 12: 
-            printf("Dezembro");
-            break; 
-        default: 
-            printf("Esse mes nao existe: "); 
+    delta = b*b - 4*a*c; 
+
+    if (delta < 0) {
+        printf("Nao existem raizes reais");
+    } else if (delta == 0) {
+        x1 = -b / 2*a;
+        printf("Raiz unica %.2f\n", x1);  
+    } else {
+        x1 = (-b + sqrt(delta)) / 2*a;
+        x2 = (-b - sqrt(delta)) / 2*a; 
+        printf("as duas raizes x1 = %.2f e x2 = %.2f\n", x1, x2);
     }
+
+    return 0; 
 }
