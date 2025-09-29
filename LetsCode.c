@@ -1,33 +1,29 @@
 #include <stdio.h> 
-#include <math.h>
 
-int main() {
+int main () {
 
-    float a, b, c, x1, x2, delta; 
+    int dia, mes, prox, ano;
 
-    printf("Digite o valor de A: ");
-    scanf("%f", &a);
-    printf("Digite o valor de B: ");
-    scanf("%f", &b); 
-    printf("Digite o valor de C: ");
-    scanf("%f", &c);
+    printf("Digite o dia: ");
+    scanf("%d", &dia); 
+    printf("Digite o mes: ");
+    scanf("%d", &mes);
+    printf("Digite o ano: ");
+    scanf("%d", &ano); 
 
-    if (a == 0) {
-        printf("Nao e uma equaçao de segundo grau");
-    } 
+    prox = dia += 1;
 
-    delta = b*b - 4*a*c; 
-
-    if (delta < 0) {
-        printf("Nao existem raizes reais");
-    } else if (delta == 0) {
-        x1 = -b / 2*a;
-        printf("Raiz unica %.2f\n", x1);  
-    } else {
-        x1 = (-b + sqrt(delta)) / 2*a;
-        x2 = (-b - sqrt(delta)) / 2*a; 
-        printf("as duas raizes x1 = %.2f e x2 = %.2f\n", x1, x2);
+    if (dia > 31) {
+        dia = 1;
+        mes += 1;
+    }
+    if (mes > 12) {
+        mes = 1; 
+        dia = 1;
+        ano += 1; 
     }
 
-    return 0; 
+    printf("%d/%d/%d \n", dia, mes, ano); 
+    return 0;
+    
 }
