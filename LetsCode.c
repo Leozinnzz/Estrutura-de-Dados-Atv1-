@@ -2,14 +2,18 @@
 
 int main() {
 
-    int n; 
+    int n, i, j; 
 
     printf("Digite um valor: ");
     scanf("%d", &n); 
 
-    for (int i=0; i<n; i++) {
-        for (int j=n; j > i+1; j--) {
-            printf(" * ");
+    for (int i = 0; i <= n; i++) {
+        for (j = 1; j <=  n - i; j++) {
+            printf(" ");
+        }
+
+        for (j = 1; j <=  2 * i - 1; j++) {
+            printf("*");
         }
         printf("\n");
     }
