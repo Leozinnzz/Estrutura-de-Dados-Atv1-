@@ -1,29 +1,16 @@
-#include <stdio.h> 
+#include <stdio.h>
 
-int main () {
+int main() {
 
-    int dia, mes, prox, ano;
+    int n; 
 
-    printf("Digite o dia: ");
-    scanf("%d", &dia); 
-    printf("Digite o mes: ");
-    scanf("%d", &mes);
-    printf("Digite o ano: ");
-    scanf("%d", &ano); 
+    printf("Digite um valor: ");
+    scanf("%d", &n); 
 
-    prox = dia += 1;
-
-    if (dia > 31) {
-        dia = 1;
-        mes += 1;
+    for (int i=0; i<n; i++) {
+        for (int j=n; j > i+1; j--) {
+            printf(" * ");
+        }
+        printf("\n");
     }
-    if (mes > 12) {
-        mes = 1; 
-        dia = 1;
-        ano += 1; 
-    }
-
-    printf("%d/%d/%d \n", dia, mes, ano); 
-    return 0;
-    
 }
