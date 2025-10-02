@@ -1,28 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
+#include <stdbool.h>
 
 int main() {
 
-    int cont = 0;
-    int m = -100, n = 100; 
+    int x; 
+    bool primo;
+
+    printf("Digite um numero x: " );
+    scanf("%d", &x);
 
 
-    srand(time(NULL)); 
-
+    srand(time(NULL));
     do { 
 
-    
-        int numero =  rand() % (n - m + 1) + m; 
-        printf("%d\n", numero);
-        cont++;
+        int number = rand() % (x + 1);
+        printf("%d\n", number);
 
-        if (numero == 0)
+        //achar o numero primo
+        primo = true;
+        if (number < 2 ) {
+            primo = false;
+        } else {
+            for(int j=2; j <= sqrt(number); j++){
+            if(number % j == 0)
+                primo = false;
+            }
+        }
+        
+        
+
+        if (primo) {
+            printf("Numero primo encontrado: \n");
             break;
+        }
 
-    } while(1);
 
-    printf("Quantidade de numeros: %d\n", cont); 
+    }while(1);
+
+    return 0; 
 
 
 
