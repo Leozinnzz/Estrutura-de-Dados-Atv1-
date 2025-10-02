@@ -4,19 +4,25 @@
 
 int main() {
 
-    int x, n, y; 
+    int cont = 0;
+    int m = -100, n = 100; 
 
-    printf("Digite a quantidade de numeros: "); 
-    scanf("%d", &x); 
+
+    srand(time(NULL)); 
+
+    do { 
+
     
-    printf("Digite um numero Y: "); 
-    scanf("%d", &y); 
+        int numero =  rand() % (n - m + 1) + m; 
+        printf("%d\n", numero);
+        cont++;
 
-    srand(time(NULL));
-    for (int i = 0; i < x; i++) {
-        n = rand() % y; 
-        printf("%d\n", n);
-    }
+        if (numero == 0)
+            break;
+
+    } while(1);
+
+    printf("Quantidade de numeros: %d\n", cont); 
 
 
 
