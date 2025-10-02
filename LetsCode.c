@@ -1,18 +1,24 @@
-#include <stdio.h> 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
 
-    int n; 
+    int x, n, y; 
 
-    printf("quantas linhas: ");
-    scanf("%d", &n);
+    printf("Digite a quantidade de numeros: "); 
+    scanf("%d", &x); 
+    
+    printf("Digite um numero Y: "); 
+    scanf("%d", &y); 
 
-    for(int i=0; i < n; i++) {
-        for (int j = 0; j < n - i; j++) { 
-            printf(" * ");
-        }
-        printf("\n");
+    srand(time(NULL));
+    for (int i = 0; i < x; i++) {
+        n = rand() % y; 
+        printf("%d\n", n);
     }
-    return 0;
+
+
+
 
 }
