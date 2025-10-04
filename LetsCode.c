@@ -1,48 +1,37 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 #include <time.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 
 int main() {
 
-    int x; 
-    bool primo;
-
-    printf("Digite um numero x: " );
-    scanf("%d", &x);
+    int alg; 
 
 
-    srand(time(NULL));
+    srand(time(NULL)); 
     do { 
 
-        int number = rand() % (x + 1);
-        printf("%d\n", number);
-
-        //achar o numero primo
-        primo = true;
-        if (number < 2 ) {
-            primo = false;
-        } else {
-            for(int j=2; j <= sqrt(number); j++){
-            if(number % j == 0)
-                primo = false;
-            }
-        }
+        int alg = 999 + rand() % 9999; 
         
+        int m = alg / 1000;
+        int c = (alg % 1000) / 100;
+        int d = ((alg % 1000) % 100) /10;
+        int u = (((alg %1000) %100) %10); 
+    
+        int sumAlg = m + c + d + u;
+        int powAlg = (sumAlg * sumAlg * sumAlg);
         
+        if(powAlg != alg)
+            printf("%d\n", alg);
 
-        if (primo) {
-            printf("Numero primo encontrado: \n");
+        
+        if(powAlg == alg) {
+            printf("O numero %d ao cubo e igual:  %d ", sumAlg, powAlg);
             break;
         }
 
 
     }while(1);
-
-    return 0; 
-
-
-
 
 }
