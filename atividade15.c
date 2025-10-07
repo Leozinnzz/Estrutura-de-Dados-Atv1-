@@ -13,7 +13,7 @@ int main() {
 	if(n <= 0)
 		primo = false;
 	for (int i = 2; i <= n / 2; i++) {
-		if(n % i == 0){
+		if(n % i == 0){	
 			primo = false; 
 		}
 	}
@@ -23,6 +23,6 @@ int main() {
 	} else { 
 		printf("%d Nao e um numero primo \n", n);
 	  }
-	 
+			
 	return 0;
 }
